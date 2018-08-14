@@ -1,7 +1,15 @@
 document.addEventListener('DOMContentLoaded', startGame)
 
 // Define your `board` object here!
-var board = {cells:[{}, {}, {}, {}]}
+var board = {
+  cells:[ 
+      {row:0,col:0,isMine:false,hidden:true},
+      {row:2,col:2,isMine:true,hidden:true},
+      {row:0,col:1,isMine:false,hidden:true},
+      {row:2,col:1,isMine:true,hidden:true},
+
+  ]
+}
 
 
 
