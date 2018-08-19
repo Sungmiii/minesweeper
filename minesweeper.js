@@ -31,9 +31,9 @@ function startGame () {
 //
 // 1. Are all of the cells that are NOT mines visible?
 // 2. Are all of the mines marked?
-var cellinside = board.cell.length;
+var cellinside = board.cells
 function checkForWin () {
-  for(let w = 0; w<cellinside; w++){
+  for(let w = 0; w < cellinside.length; w++){
      if(cellinside[w].isMine === true && cellinside[w].isMarked === false){
        return;
      }else if(cellinside[w].isMine === false && cellinside[w].hidden === true){
