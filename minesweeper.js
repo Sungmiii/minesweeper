@@ -16,7 +16,7 @@ var board = {
       {row:2,col:4,isMine:true,hidden:true},
       {row:4,col:2,isMine:false,hidden:true},
       {row:3,col:4,isMine:true,hidden:true},
-      {row:4,col:0,isMine:false,hidden:true},
+      {row:4,col:1,isMine:false,hidden:true},
       {row:1,col:4,isMine:true,hidden:true},
       {row:3,col:3,isMine:true,hidden:true}
   ]
@@ -66,7 +66,7 @@ function countSurroundingMines (cell) {
   if(surrounding[x].isMine === true) {
     var count = 0;
     count++
-  return count 
+  return count
   }
 
  }
@@ -74,9 +74,11 @@ function countSurroundingMines (cell) {
 }
 
 // reset button
-
-var reset = document.getElementById('reset')
-for(var z=0; l=reset.length, z<l; z++){
- reset[z].selected=reset[z].defaultSelected;
+function resetfunction() {
+  document.getElementById('reset',location.reload())
 }
 
+var audio = $('#dogbark')[0];
+$('#game').mouseenter(function(){
+  audio.play();
+});
