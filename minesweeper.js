@@ -94,13 +94,12 @@ function countSurroundingMines(cell) {
 function resetfunction() {
   document.getElementById('reset',location.reload())
 }
-// audio try: not working yet ... :(
-
-function playMusic(){
+// audio try: not working yet ... :( alright this code is not working this jsfile only in lib.js 
+/* function playMusic(){
   var music = document.getElementById('music');
   for(let bar =0; bar<board.cells.length; bar++){
     if(board.cells[bar].isMine === true){
       music.play();
     }
   }
-}
+} */
