@@ -31,7 +31,7 @@ function creatGame() {
       board.cells.push({
         row:r,
         col:c,
-        isMine:true,
+        isMine: !!Math.floor(Math.random()*2),
         isMarked:false,
         hidden:true
     })
