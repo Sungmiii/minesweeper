@@ -79,17 +79,14 @@ function checkForWin () {
 //
 // It will return cell objects in an array. You should loop through 
 // them, counting the number of times `cell.isMine` is true.
-function countSurroundingMines (cell) {
+function countSurroundingMines(cell) {
   var surrounding = lib.getSurroundingCells(cell.row, cell.col);
+  var count = 0;
  for(var x=0; x<surrounding.length; x++){
   if(surrounding[x].isMine === true) {
-    var count = 0;
     count++
-  return count
   }
-
- }
- 
+ }return count
 }
 
 // reset button
@@ -97,7 +94,12 @@ function resetfunction() {
   document.getElementById('reset',location.reload())
 }
 // audio try: not working yet ... :(
-var audio = $('#dogbark')[0];
-$('#game').mouseenter(function(){
-  audio.play();
-});
+var music = document.getElementById('music');
+function playMusic(){
+  for(let bar =0; bar<board.cell.length; bar++){
+    if(board.cell[bar].isMine === true){
+      music.play();
+    }
+  }
+}
+playMusic();
