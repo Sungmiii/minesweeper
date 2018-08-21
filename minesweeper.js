@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', startGame)
 
 //function board create 
 var board = {cells:[]};
-var rowcol = 4;
+var rowcol = 5;
 function creatGame() {
   for(let r=0; r<rowcol; r++){
     for(let c=0; c<rowcol; c++){
@@ -38,7 +38,6 @@ function creatGame() {
     }
   } 
 }
-
 creatGame();
 
 
