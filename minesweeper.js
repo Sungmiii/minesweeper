@@ -31,7 +31,7 @@ function creatGame() {
       board.cells.push({
         row:r,
         col:c,
-        isMine: !!Math.floor(Math.random()*2),
+        isMine: !!Math.floor(Math.random()*1.4),
         isMarked:false,
         hidden:true
     })
@@ -57,6 +57,7 @@ function startGame () {
 //
 // 1. Are all of the cells that are NOT mines visible?
 // 2. Are all of the mines marked?
+var music = document.getElementById('music');
 var cellinside = board.cells
 function checkForWin () {
   for(let w = 0; w < cellinside.length; w++){
@@ -94,12 +95,12 @@ function resetfunction() {
   document.getElementById('reset',location.reload())
 }
 // audio try: not working yet ... :(
-var music = document.getElementById('music');
+
 function playMusic(){
-  for(let bar =0; bar<board.cell.length; bar++){
-    if(board.cell[bar].isMine === true){
+  var music = document.getElementById('music');
+  for(let bar =0; bar<board.cells.length; bar++){
+    if(board.cells[bar].isMine === true){
       music.play();
     }
   }
 }
-playMusic();
