@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', startGame)
 
 // Define your `board` object here!
-var board = {
+/* var board = {
   cells:[ 
       {row:0,col:0,isMine:false,hidden:true},
       {row:2,col:2,isMine:true,hidden:true},
@@ -20,7 +20,27 @@ var board = {
       {row:1,col:4,isMine:true,hidden:true},
       {row:3,col:3,isMine:true,hidden:true}
   ]
+} */
+
+//function board create 
+var board = {cells:[]};
+var rowcol = 4;
+function creatGame() {
+  for(let r=0; r<rowcol; r++){
+    for(let c=0; c<rowcol; c++){
+      board.cells.push({
+        row:r,
+        col:c,
+        isMine:true,
+        isMarked:false,
+        hidden:true
+    })
+    }
+  } 
 }
+
+creatGame();
+
 
 
 
@@ -77,7 +97,7 @@ function countSurroundingMines (cell) {
 function resetfunction() {
   document.getElementById('reset',location.reload())
 }
-
+// audio try: not working yet ... :(
 var audio = $('#dogbark')[0];
 $('#game').mouseenter(function(){
   audio.play();
